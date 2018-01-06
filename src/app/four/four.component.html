@@ -1,0 +1,10 @@
+<p> four works! </p>
+<div [formGroup]="c4Form">
+	<p> this is actually an inner form</p>
+	<input type="text"
+		formControlName="c4Input"
+		(change)="onChange($event)" 
+		(keyup)="onChange($event)">
+	<p>c4Vals: {{c4Vals | json}}</p>
+	<p>c4Form.value: {{c4Form.value | json}}</p>
+</div>
