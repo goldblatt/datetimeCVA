@@ -1,10 +1,13 @@
-<p> four works! </p>
+<mat-card><mat-card-content><p> four works! </p>
 <div [formGroup]="c4Form">
-	<p> this is actually an inner form</p>
 	<input type="text"
 		formControlName="c4Input"
 		(change)="onChange($event)" 
 		(keyup)="onChange($event)">
 	<p>c4Vals: {{c4Vals | json}}</p>
 	<p>c4Form.value: {{c4Form.value | json}}</p>
+</div></mat-card-content></mat-card>
+
+<div>
+<p>Has an inner form group with it's own values that get updated. c4Vals updates on valueChanges & c4Form.value is function on the formGroup</p>
 </div>

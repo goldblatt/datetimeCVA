@@ -1,0 +1,16 @@
+.parent-form{
+	display: flex;
+	justify-content: center;
+	max-width: 1000px;
+	font-size: 24px;
+}
+
+input {
+	font-size: 24px;
+	width: 400px;
+}
+
+.comp-form {
+	display: flex;
+	justify-content: center;
+}

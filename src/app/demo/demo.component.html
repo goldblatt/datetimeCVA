@@ -1,0 +1,8 @@
+<p> demo works!</p>
+<form [formGroup]="myForm">
+  <app-datetime formControlName="datetime"></app-datetime>
+  <app-time formControlName="time"></app-time>
+  <p> datetime in my timezone {{myForm.value.datetime}} </p>
+  <p> datetime in UTC {{myForm.value | json}} </p>
+
+</form>

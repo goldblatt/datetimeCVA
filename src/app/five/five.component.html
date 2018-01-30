@@ -1,8 +1,18 @@
-<p>
-  five works!
+<mat-card><mat-card-content><p>
+  middle component works!
 </p>
 <!-- 
 ThreeComponent.html:2 ERROR TypeError: this.propogateChange is not a function
     at ThreeComponent.webpackJsonp.../../../../../src/app/three/three.component.ts.ThreeComponent.onChange
  -->
-<app-three></app-three>
+
+
+<div [formGroup]="c5Form">
+	<app-three (ngModelChange)="onChange($event)" formControlName="c5Input"></app-three>
+</div>
+
+</mat-card-content></mat-card>
+
+<!-- <div>
+<p>Five has nothing but three inside of it & implements a CVA. Register on change is getting called before initializing component so this doesn't really work :O </p>
+</div> -->

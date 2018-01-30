@@ -1,18 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="mat-app-background" style="text-align:center; display:flex; flex-direction: column; align-items:center;">
   <h1>
     Welcome to Forms!!
   </h1>
-  <form [formGroup]="myForm">
-  	<p> This is the base component </p>
-    <input type="text" formControlName="test1">
-    <button type="submit">CLICK ME</button>
-    <app-one formControlName="onec"></app-one>
-    <app-two formControlName="twoc"></app-two>
-    <app-three formControlName="threec"></app-three>
-    <app-four formControlName="fourc"></app-four>
-    <app-five formControlName="fivec"></app-five>
-    <p>Top Level Valsue: {{myForm.value | json}}</p>
-    <p>Value Changes: {{vals | json}}</p>
-  </form>
+  <app-demo></app-demo>
 </div>

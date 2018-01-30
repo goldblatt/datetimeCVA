@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <div [formGroup]="localForm">
+        <app-time formControlName="time" (ngModelChange)="updateTime($event)"></app-time>
+        <mat-form-field>
+          <input matInput (dateChange)="updateDate($event)" [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,40 @@
+  <form [formGroup]="myForm">
+    <div class="parent-form">
+        <mat-card>
+            <mat-card-title>
+
+            </mat-card-title>
+             <mat-card-content>
+                <div class="scrollView">
+                    <div [ngSwitch]="currentComponent">
+                        <div class="comp-form" *ngSwitchCase="componentEnum.base">
+                            <demo></demo>
+                        </div>
+
+          <!--               <app-one *ngSwitchCase="componentEnum.base" class="comp-form" formControlName="child"></app-one> -->
+
+                        <!-- <app-two *ngSwitchCase="componentEnum.base" class="comp-form" formControlName="child"></app-two> -->
+                         
+                       <!--  <app-three *ngSwitchCase="componentEnum.base" class="comp-form" formControlName="child"></app-three> -->
+                        
+ <!-- <app-four *ngSwitchCase="componentEnum.base" class="comp-form" formControlName="child"></app-four> -->
+
+                    <!--     <app-six formControlName="sixc"></app-six> -->
+                       <!--  <app-five *ngSwitchCase="componentEnum.base" class="comp-form" formControlName="middle"></app-five> -->
+<!--<app-six *ngSwitchCase="componentEnum.six" class="comp-form" [defaultInput]="'eightc'" formControlName="eightc"></app-six>
+                        <app-seven *ngSwitchCase="componentEnum.seven" class="comp-form" [defaultInput]="nineCBaseValue" formatControlName="ninec"></app-seven>
+                        <app-eight *ngSwitchCase="componentEnum.eight" class="comp-form" formControlName="fivec"></app-eight> </div> -->
+<!--                     <mat-card-actions>
+                        <button mat-button (click)="handlePrevClick()">PREV</button>
+                        <button mat-button (click)="handleNextClick()">NEXT</button>
+                    </mat-card-actions> -->
+<!--                 </div>
+                <div class="formValues"> -->
+<!--                     <button type="submit">CLICK ME</button>
+ -->                    
+                    <p>Top Level Valsue: {{myForm.value | json}}</p>
+                </div>
+            </mat-card-content>
+         </mat-card>
+     </div>
+  </form>sc

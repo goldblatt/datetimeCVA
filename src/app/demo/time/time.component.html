@@ -1,0 +1,33 @@
+<!-- <mat-slider
+    class="example-margin"
+    (change)="onChange($event)"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [value]="0">
+</mat-slider> -->
+<div class="timeselect">
+    <mat-select (selectionChange)="selectHours($event)" [value]="12">
+        <mat-option *ngFor="let hour of hours; let i = index" [value]="i + 1">
+          {{ i + 1}}
+        </mat-option>
+    </mat-select>
+    :
+    <mat-select (selectionChange)="selectMinutes($event)" [value]="0">
+        <mat-option *ngFor="let minute of minutes; let i = index" [value]="i">
+          {{ i }}
+        </mat-option>
+    </mat-select>
+    :
+    <mat-select (selectionChange)="selectSeconds($event)" [value]="0">
+        <mat-option *ngFor="let second of seconds; let i = index" [value]="i">
+          {{ i }}
+        </mat-option>
+    </mat-select>
+
+    <mat-select (selectionChange)="selectAMPM($event)" [value]="'AM'">
+        <mat-option *ngFor="let timeSelect of ['AM', 'PM']" [value]="timeSelect">
+          {{ timeSelect }}
+        </mat-option>
+    </mat-select>
+</div>
