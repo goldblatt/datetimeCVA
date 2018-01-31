@@ -1,0 +1,4 @@
+.datetime {
+	display: flex;
+	flex-direction: column;
+}

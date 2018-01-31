@@ -15,7 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 })
 export class DatetimeComponent implements ControlValueAccessor {
   date: Date = new Date();
-  hours: string = '12:00:00 PM';
+  timeString: string = '12:00:00 PM';
 
   // call this to emit an event
   private _onChange: (_: Date) => Date;
@@ -25,7 +25,8 @@ export class DatetimeComponent implements ControlValueAccessor {
 
   ngOnInit() {
     this.localForm = this.formBuilder.group({
-      time: '', // local form
+      time: '',
+      date: '',
     });
   }
 
@@ -35,13 +36,13 @@ export class DatetimeComponent implements ControlValueAccessor {
   }
   
   updateTime(event) {
-  	this.hours = event;
+  	this.timeString = event;
   	this.onChange();
   }
 
   // function 
   onChange() {
-  	  const dateCopy = new Date(`${this.date.toDateString()} ${this.hours}`); 
+  	  const dateCopy = new Date(`${this.date.toDateString()} ${this.timeString}`); 
       this._onChange(dateCopy);
   }
    

@@ -52,6 +52,8 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { TimeComponent } from './demo/time/time.component';
 import { DatetimeComponent } from './demo/datetime/datetime.component';
+import { TimesliderComponent } from './demo/timeslider/timeslider.component';
+import { BInputComponent } from './demo/basicinput/basicinput.component';
 
 @NgModule({
   exports: [
@@ -83,7 +85,9 @@ export class DemoMaterialModule {}
     // NineComponent,
     DemoComponent,
     TimeComponent,
-    DatetimeComponent
+    DatetimeComponent,
+    TimesliderComponent,
+    BInputComponent
   ],
   imports: [
     BrowserModule, 

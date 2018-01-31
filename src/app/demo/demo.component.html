@@ -1,8 +1,19 @@
-<p> demo works!</p>
 <form [formGroup]="myForm">
-  <app-datetime formControlName="datetime"></app-datetime>
-  <app-time formControlName="time"></app-time>
-  <p> datetime in my timezone {{myForm.value.datetime}} </p>
-  <p> datetime in UTC {{myForm.value | json}} </p>
+  <div class="cvas">
+    <mat-card>
+        <mat-card-content>
+          <app-datetime formControlName="datetime"></app-datetime>
+        </mat-card-content>
+    </mat-card>
+<!--     <mat-card>
+        <mat-card-content>
+          <app-timeslider formControlName="time"></app-timeslider>
+        </mat-card-content>
+    </mat-card> -->
 
+<!--     <app-basicinput formControlName="time"></app-basicinput> -->
+  </div>
+  <!-- <p>{{'{ "datetime": "' + myForm.value.datetime + '", "time": "' + myForm.value.time + '" }'}}</p> -->
+<!--   <p>{{'{ "datetime": "' + myForm.value.datetime + '" }'}}</p> -->
+  <p style="width:200px;">{{'{ "datetime": "' + myForm.value.datetime + '" }'}}</p>
 </form>

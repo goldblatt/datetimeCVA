@@ -13,8 +13,8 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      datetime: '', // local form
-      time: '',
+      datetime: '',
+      // time: '',
     });
   }
 

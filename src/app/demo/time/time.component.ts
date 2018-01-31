@@ -13,24 +13,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
   }],
 })
 export class TimeComponent implements OnInit, ControlValueAccessor {
-  autoTicks = false;
-  disabled = false;
-  invert = false;
-  max = 24;
-  min = 0;
-  showTicks = false;
-  step = 1;
-  thumbLabel = false;
-  value = 0;
-  vertical = false;
-
-  get tickInterval(): number | 'auto' {
-    return this.showTicks ? (this.autoTicks ? 'auto' : this._tickInterval) : 0;
-  }
-  set tickInterval(v) {
-    this._tickInterval = Number(v);
-  }
-  private _tickInterval = 1;
   // call this to emit an event
   private _onChange: (_: string) => string;
   hours = new Array(12);
@@ -38,9 +20,9 @@ export class TimeComponent implements OnInit, ControlValueAccessor {
   seconds = new Array(60);
 
   // set the default values here
-  pickedHour = 12;
-  pickedMinute = 0; 
-  pickedSeconds = 0;
+  selectedHours = 12;
+  selectedMinutes = 0; 
+  selectedSeconds = 0;
   pickedAMPM = 'AM';
 
   constructor() { }
@@ -49,17 +31,17 @@ export class TimeComponent implements OnInit, ControlValueAccessor {
   }
 
   selectHours(event) {
-    this.pickedHour = event.value;
+    this.selectedHours = event.value;
     this.onChange();
   }
 
   selectMinutes(event){
-    this.pickedMinute = event.value;
+    this.selectedMinutes = event.value;
     this.onChange();
   }
 
   selectSeconds(event){
-    this.pickedSeconds = event.value;
+    this.selectedSeconds = event.value;
     this.onChange();
   }
 
@@ -68,11 +50,15 @@ export class TimeComponent implements OnInit, ControlValueAccessor {
     this.onChange();
   }
 
+  formatTime(input: number) {
+    return `${(input < 10)? '0': ''}${input}`; 
+  }
+
   // function 
   onChange() {
-    const hourString = this.pickedHour < 10? `0${this.pickedHour}`: this.pickedHour;
-    const minuteString = this.pickedMinute < 10? `0${this.pickedMinute}`: this.pickedMinute;
-    const secondString = this.pickedSeconds < 10? `0${this.pickedSeconds}`: this.pickedSeconds;
+    const hourString = this.formatTime(this.selectedHours);
+    const minuteString = this.formatTime(this.selectedMinutes);
+    const secondString = this.formatTime(this.selectedSeconds);
 
     this._onChange(`${hourString}:${minuteString}:${secondString} ${this.pickedAMPM}`);
   }
