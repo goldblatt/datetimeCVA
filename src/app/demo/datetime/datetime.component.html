@@ -1,7 +1,9 @@
 <div class="datetime" [formGroup]="localForm">
-<!--     <app-time formControlName="time" (ngModelChange)="updateTime($event)"></app-time> -->
-<!--     <app-basicinput (ngModelChange)="updateTime($event)" formControlName="time"></app-basicinput> -->    
-    <app-timeslider formControlName="time" (ngModelChange)="updateTime($event)"></app-timeslider>
+    <div [ngSwitch]="timeSelector">
+        <app-basicinput *ngSwitchCase="TimeInput.BINPUT" formControlName="time" (ngModelChange)="updateTime($event)"></app-basicinput>  
+        <app-timeslider *ngSwitchCase="TimeInput.SLIDER"formControlName="time" (ngModelChange)="updateTime($event)"></app-timeslider>
+        <app-time *ngSwitchCase="TimeInput.SELECTOR" formControlName="time" (ngModelChange)="updateTime($event)"></app-time>
+    </div>
     <mat-form-field>
       <input matInput (dateChange)="updateDate($event)" formControlName="date" [matDatepicker]="picker" placeholder="Choose a date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

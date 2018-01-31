@@ -1,5 +1,6 @@
 import { Component, forwardRef, OnInit, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TimeInputEnum } from '../models';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
@@ -13,7 +14,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     multi: true,
   }],
 })
-export class DatetimeComponent implements ControlValueAccessor {
+export class DatetimeComponent implements OnInit, ControlValueAccessor {
+  TimeInput = TimeInputEnum;
+
+  @Input() timeSelector: number = this.TimeInput.BINPUT; 
+
   date: Date = new Date();
   timeString: string = '12:00:00 PM';
 

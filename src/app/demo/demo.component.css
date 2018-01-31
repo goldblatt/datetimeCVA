@@ -1,3 +1,11 @@
 .cvas {
+	align-items: center;
 	display: flex;
+	flex-direction: column;
+	width: 250px;
+}
+
+.time-selector {
+	width: 200px;
+	margin-bottom: 12px;
 }

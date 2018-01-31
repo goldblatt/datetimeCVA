@@ -40,15 +40,6 @@ import {
 
 
 import { AppComponent } from './app.component';
-// import { OneComponent } from './one/one.component';
-// import { TwoComponent } from './two/two.component';
-// import { ThreeComponent } from './three/three.component';
-// import { FourComponent } from './four/four.component';
-// import { FiveComponent } from './five/five.component';
-// import { SixComponent } from './six/six.component';
-// import { SevenComponent } from './seven/seven.component';
-// import { EightComponent } from './eight/eight.component';
-// import { NineComponent } from './nine/nine.component';
 import { DemoComponent } from './demo/demo.component';
 import { TimeComponent } from './demo/time/time.component';
 import { DatetimeComponent } from './demo/datetime/datetime.component';
@@ -74,15 +65,6 @@ export class DemoMaterialModule {}
 @NgModule({
   declarations: [
     AppComponent,
-    // OneComponent,
-    // TwoComponent,
-    // ThreeComponent,
-    // FourComponent,
-    // FiveComponent,
-    // // SixComponent,
-    // SevenComponent,
-    // EightComponent,
-    // NineComponent,
     DemoComponent,
     TimeComponent,
     DatetimeComponent,

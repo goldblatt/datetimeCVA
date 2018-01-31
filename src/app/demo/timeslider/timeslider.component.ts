@@ -53,7 +53,9 @@ export class TimesliderComponent implements OnInit, ControlValueAccessor {
     const minuteString = this.formatTime(minutes);
     const secondString = this.formatTime(seconds);
 
-    this._onChange(`${hourString}:${minuteString}:${secondString}`);
+    if (this._onChange) {
+      this._onChange(`${hourString}:${minuteString}:${secondString}`);
+    }
   }
    
   // this seems like magic
